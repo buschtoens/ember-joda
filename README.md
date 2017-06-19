@@ -1,26 +1,23 @@
 # ember-joda
 
-This README outlines the details of collaborating on this Ember addon.
+:clock2: [**js-joda**](joda) — immutable date and time library for [**Ember.js**](ember)
+
+[joda]: https://github.com/js-joda/js-joda
+[ember]: https://github.com/emberjs/ember.js
+
+---
 
 ## Installation
 
-* `git clone <repository-url>` this repository
-* `cd ember-joda`
-* `npm install`
+```
+$ ember install ember-joda
+```
 
-## Running
+## Usage
 
-* `ember serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-## Running Tests
-
-* `npm test` (Runs `ember try:each` to test your addon against multiple Ember versions)
-* `ember test`
-* `ember test --server`
-
-## Building
-
-* `ember build`
-
-For more information on using ember-cli, visit [https://ember-cli.com/](https://ember-cli.com/).
+```js
+import { LocalDate, YearMonth } from 'ember-joda';
+// or
+import { LocalDate } from 'ember-joda/LocalDate';
+import { YearMonth } from 'ember-joda/YearMonth';
+```
