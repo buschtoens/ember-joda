@@ -5,6 +5,9 @@
 [![npm version](https://badge.fury.io/js/ember-joda.svg)][npm]
 [![Ember Observer Score](https://emberobserver.com/badges/ember-joda.svg)][e-observer]
 [![npm downloads](https://img.shields.io/npm/dt/ember-joda.svg)][npm]
+[![Greenkeeper badge](https://badges.greenkeeper.io/buschtoens/ember-yoda.svg)](https://greenkeeper.io/)
+[![dependencies Status](https://david-dm.org/buschtoens/ember-yoda/status.svg)](https://david-dm.org/buschtoens/ember-yoda)
+[![devDependencies Status](https://david-dm.org/buschtoens/ember-yoda/dev-status.svg)](https://david-dm.org/buschtoens/ember-yoda?type=dev)
 
 :clock2: [**js-joda**][joda] — immutable date and time library for [**Ember.js**][ember]
 
