@@ -8,6 +8,10 @@ sudo: false
 cache:
   yarn: true
 
+addons:
+  code_climate:
+    repo_token: fbb69597c2d54c80134dbbee921bb09924bca190521b8385260f5319266983f4
+
 env:
   # we recommend testing LTS's and latest stable release (bonus points to beta/canary)
   - EMBER_TRY_SCENARIO=ember-lts-2.4
@@ -25,7 +29,7 @@ matrix:
 before_install:
   - curl -o- -L https://yarnpkg.com/install.sh | bash
   - export PATH=$HOME/.yarn/bin:$PATH
-  - yarn global add phantomjs-prebuilt
+  - yarn global add phantomjs-prebuilt codeclimate-test-reporter
   - phantomjs --version
 
 install:
@@ -35,3 +39,6 @@ script:
   # Usually, it's ok to finish the test scenario without reverting
   #  to the addon's original dependency state, skipping "cleanup".
   - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO test --skip-cleanup
+
+after_script:
+  - codeclimate-test-reporter < coverage/lcov.info
