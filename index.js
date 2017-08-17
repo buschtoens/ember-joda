@@ -13,6 +13,12 @@ const jodaPath = path.join(
 module.exports = {
   name: 'ember-joda',
 
+  options: {
+    babel: {
+      plugins: ['transform-class-properties']
+    }
+  },
+
   treeForAddon() {
     const addonTree = this._super.treeForAddon.apply(this, arguments);
 
