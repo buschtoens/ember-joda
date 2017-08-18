@@ -1,4 +1,5 @@
 # ember-joda
+[![Supported Ember versions](https://embadge.io/v1/badge.svg?label=ember&start=2.12.0)]
 [![Build Status](https://travis-ci.org/buschtoens/ember-joda.svg?branch=master)][travis]
 [![Code Climate](https://codeclimate.com/github/buschtoens/ember-joda/badges/gpa.svg)][codeclimate]
 [![Coverage](https://codeclimate.com/github/buschtoens/ember-joda/badges/coverage.svg)][codeclimate]
