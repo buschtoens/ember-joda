@@ -10,6 +10,8 @@ const jodaPath = path.join(
   'src'
 );
 
+const vendorPath = path.join(__dirname, 'vendor');
+
 module.exports = {
   name: 'ember-joda',
 
@@ -31,7 +33,7 @@ module.exports = {
       new Funnel(jodaPath, {
         destDir: 'js-joda'
       }),
-      new Funnel('vendor/js-joda', { destDir: 'js-joda' })
+      new Funnel(`${vendorPath}/js-joda`, { destDir: 'js-joda' })
     ]);
 
     const babelOptions = {
