@@ -29,20 +29,18 @@ module.exports = {
 
     const jodaTree = mergeTrees([
       new Funnel(jodaPath, {
-        destDir: 'js-joda',
-
-        getDestinationPath(relativePath) {
-          switch (relativePath) {
-            // case 'temporal/TemporalAccessor.js':
-            //   return 'temporal/_TemporalAccessor.js';
-            default:
-              return relativePath;
-          }
-        }
+        destDir: 'js-joda'
       }),
       new Funnel('vendor/js-joda', { destDir: 'js-joda' })
     ]);
-    const transpiledJodaTree = babelAddon.transpileTree(jodaTree);
+
+    const babelOptions = {
+      babel: {
+        plugins: [[require('./lib/transform-joda-to-ember'), {}]]
+      }
+    };
+
+    const transpiledJodaTree = babelAddon.transpileTree(jodaTree, babelOptions);
 
     return mergeTrees([addonTree, transpiledJodaTree]);
   }

@@ -21,6 +21,6 @@ export default class MonthTransform extends JodaTransform {
   serialize(deserialized) {
     this._assertJodaType(deserialized);
 
-    return deserialized.value();
+    return deserialized.value;
   }
 }
