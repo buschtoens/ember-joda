@@ -1,1 +1,1 @@
-export * from './js-joda';
+export * from 'js-joda';

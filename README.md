@@ -51,10 +51,14 @@ All [exports of js-joda](https://github.com/js-joda/js-joda/blob/master/src/js-j
 import { LocalDate, YearMonth } from 'ember-joda';
 ```
 
-You could also directly access the `js-joda` module, but this should not be considered public API and is potentially subject to change:
+You could also directly access the `js-joda` module and load the original,
+unwrapped js-joda classes:
 
 ```js
-import { ZoneOffset } from 'js-joda/ZoneOffset';
+import { LocalDate, YearMonth } from 'js-joda';
+// or
+import { LocalDate } from 'js-joda/LocalDate';
+import { YearMonth } from 'js-joda/YearMonth';
 ```
 
 ### Ember Data Transforms

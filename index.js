@@ -23,11 +23,25 @@ module.exports = {
     const addonTree = this._super.treeForAddon.apply(this, arguments);
 
     // const babelAddon = this.findAddonByName('ember-cli-babel');
-    const babelAddon = this.addons.find(addon => addon.name === 'ember-cli-babel');
+    const babelAddon = this.addons.find(
+      addon => addon.name === 'ember-cli-babel'
+    );
 
-    const jodaTree = new Funnel(jodaPath, {
-      destDir: 'ember-joda'
-    });
+    const jodaTree = mergeTrees([
+      new Funnel(jodaPath, {
+        destDir: 'js-joda',
+
+        getDestinationPath(relativePath) {
+          switch (relativePath) {
+            // case 'temporal/TemporalAccessor.js':
+            //   return 'temporal/_TemporalAccessor.js';
+            default:
+              return relativePath;
+          }
+        }
+      }),
+      new Funnel('vendor/js-joda', { destDir: 'js-joda' })
+    ]);
     const transpiledJodaTree = babelAddon.transpileTree(jodaTree);
 
     return mergeTrees([addonTree, transpiledJodaTree]);
