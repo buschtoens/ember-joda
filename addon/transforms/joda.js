@@ -1,4 +1,5 @@
 import Transform from 'ember-data/transform';
+import { isNone } from '@ember/utils';
 import { assert } from '@ember/debug';
 
 /**
@@ -28,6 +29,7 @@ export default class JodaTransform extends Transform {
    * @return {Object}
    */
   deserialize(serialized) {
+    if (isNone(serialized)) return null;
     return this.constructor.JodaClass.parse(serialized);
   }
 
@@ -37,6 +39,7 @@ export default class JodaTransform extends Transform {
    * @return {String}
    */
   serialize(deserialized) {
+    if (isNone(deserialized)) return null;
     this._assertJodaType(deserialized);
     return deserialized.toString();
   }

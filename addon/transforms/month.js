@@ -1,4 +1,5 @@
 import JodaTransform from './joda';
+import { isNone } from '@ember/utils';
 import { Month } from 'ember-joda';
 
 export default class MonthTransform extends JodaTransform {
@@ -10,6 +11,7 @@ export default class MonthTransform extends JodaTransform {
    * @return {Object}
    */
   deserialize(serialized) {
+    if (isNone(serialized)) return null;
     return this.constructor.JodaClass.of(serialized);
   }
 
@@ -19,6 +21,7 @@ export default class MonthTransform extends JodaTransform {
    * @return {number}
    */
   serialize(deserialized) {
+    if (isNone(deserialized)) return null;
     this._assertJodaType(deserialized);
 
     return deserialized.value;
