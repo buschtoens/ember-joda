@@ -1,6 +1,6 @@
 {
   "name": "ember-joda",
-  "version": "0.0.0-alpha.11",
+  "version": "0.0.0-alpha.10.1",
   "description": "js-joda — immutable date and time library for Ember.js",
   "keywords": [
     "ember-addon"
