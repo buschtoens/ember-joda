@@ -4,6 +4,8 @@ const path = require('path');
 const Funnel = require('broccoli-funnel');
 const mergeTrees = require('broccoli-merge-trees');
 
+const BabelTranspiler = require('broccoli-babel-transpiler');
+
 const jodaPath = path.join(
   path.dirname(require.resolve('js-joda/package.json')),
   'src'
@@ -36,12 +38,12 @@ module.exports = {
     ]);
 
     const babelOptions = {
-      babel: {
-        postTransformPlugins: [[require('./lib/transform-joda-to-ember'), {}]]
-      }
+      plugins: [require('./lib/transform-joda-to-ember')]
     };
 
-    const transpiledJodaTree = babelAddon.transpileTree(jodaTree, babelOptions);
+    const transpiledJodaTree = babelAddon.transpileTree(
+      new BabelTranspiler(jodaTree, babelOptions)
+    );
 
     return mergeTrees([addonTree, transpiledJodaTree]);
   }
