@@ -37,7 +37,7 @@ module.exports = {
 
     const babelOptions = {
       babel: {
-        plugins: [[require('./lib/transform-joda-to-ember'), {}]]
+        postTransformPlugins: [[require('./lib/transform-joda-to-ember'), {}]]
       }
     };
 
