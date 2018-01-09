@@ -52,9 +52,10 @@ export default class JodaTransform extends Transform {
    */
   _assertJodaType(obj) {
     const { constructor, constructor: { JodaClass } } = this;
-    assert(
-      `${constructor.name} can only serialize ${JodaClass.name} instances.`,
-      obj instanceof JodaClass
-    );
+    if (!(obj instanceof JodaClass)) {
+      throw new TypeError(
+        `${constructor.name} can only serialize ${JodaClass.name} instances.`
+      );
+    }
   }
 }
