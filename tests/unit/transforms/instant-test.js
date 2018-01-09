@@ -25,14 +25,10 @@ test('it throws an error when trying to serialize a mismatching type', function(
   }, /InstantTransform/);
 });
 
-test('it throws an error when trying to serialize a null or undefined value', function(assert) {
+test('it serializes as null, when trying to serialize a null or undefined value', function(assert) {
   const transform = this.subject();
-  assert.throws(() => {
-    transform.serialize(null);
-  }, /InstantTransform/);
-  assert.throws(() => {
-    transform.serialize();
-  }, /InstantTransform/);
+  assert.equal(transform.serialize(null), null);
+  assert.equal(transform.serialize(), null);
 });
 
 test('it correctly deserializes data', function(assert) {
