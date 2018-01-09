@@ -1,4 +1,5 @@
 {
+  "name": "transform-joda-to-ember",
   "engines": {
     "node": "6.* || >= 7.*"
   }
