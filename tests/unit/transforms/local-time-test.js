@@ -18,18 +18,14 @@ test('it correctly serializes data', function(assert) {
   assert.strictEqual(serialized, fixtureSerialized);
 });
 
-test('it throws an error when trying to serialize a mismatching type', function(
-  assert
-) {
+test('it throws an error when trying to serialize a mismatching type', function(assert) {
   const transform = this.subject();
   assert.throws(() => {
     transform.serialize({});
   }, /LocalTimeTransform/);
 });
 
-test('it throws an error when trying to serialize a null or undefined value', function(
-  assert
-) {
+test('it throws an error when trying to serialize a null or undefined value', function(assert) {
   const transform = this.subject();
   assert.throws(() => {
     transform.serialize(null);
