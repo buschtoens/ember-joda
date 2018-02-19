@@ -20,7 +20,8 @@
 [codeclimate]: https://codeclimate.com/github/buschtoens/ember-joda
 [e-observer]:  https://emberobserver.com/addons/ember-joda
 
-## Installation
+Installation
+------------------------------------------------------------------------------
 
 ```
 $ ember install ember-joda

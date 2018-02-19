@@ -34,7 +34,8 @@ module.exports = {
       ],
       excludedFiles: [
         'app/**',
-        'addon/**'
+        'addon/**',
+        'tests/dummy/app/**'
       ],
       parserOptions: {
         sourceType: 'script',
@@ -49,15 +50,6 @@ module.exports = {
         'camelcase': 'off',
         'prettier/prettier': 'off',
       })
-    },
-
-    // test files
-    {
-      files: ['tests/**/*.js'],
-      excludedFiles: ['tests/dummy/**/*.js'],
-      env: {
-        embertest: true
-      }
     }
   ]
 };
