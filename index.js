@@ -38,7 +38,7 @@ module.exports = {
     ]);
 
     const babelOptions = {
-      plugins: [require('./lib/transform-joda-to-ember')]
+      plugins: [require('./lib/transform-joda-to-ember'), 'transform-es2015-classes']
     };
 
     const transpiledJodaTree = babelAddon.transpileTree(
