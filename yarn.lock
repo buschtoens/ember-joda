@@ -4892,9 +4892,10 @@ jquery@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
 
-js-joda@^1.7.0:
-  version "1.7.0"
-  resolved "https://registry.yarnpkg.com/js-joda/-/js-joda-1.7.0.tgz#64b8566c703680ca73ab163bfbb4fbcc8aac847c"
+js-joda@^1.9.3:
+  version "1.9.3"
+  resolved "https://registry.yarnpkg.com/js-joda/-/js-joda-1.9.3.tgz#8b9429c6be3af1f1071af39254fcf57628a13101"
+  integrity sha512-vMB8u1vmlcnl1Pxk01JRf+AJoQudY40rMgqHoCX5JRShnWd9Km77yCChKFZsYC6wFGXBx8EhbeIPqN3Ecn+jxw==
 
 js-reporters@1.2.1:
   version "1.2.1"
